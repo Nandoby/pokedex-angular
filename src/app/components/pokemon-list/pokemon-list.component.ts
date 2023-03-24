@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Pokedex } from 'src/app/models/pokedex';
 import { PokemonService } from 'src/app/service/pokemon.service';
 
@@ -18,10 +18,16 @@ export class PokemonListComponent implements OnInit {
     this.loadItems('https://pokeapi.co/api/v2/pokemon');
   }
 
+  @Output() selectPokemon : EventEmitter<string> = new EventEmitter<string>()
+
   loadItems(url: string) {
     this._pokeService.get(url).subscribe({
       next: (data) => (this.pokemons = data),
     });
+  }
+
+  pokeSelected(url: string) {
+    this.selectPokemon.emit(url)
   }
 
   prev(): void {

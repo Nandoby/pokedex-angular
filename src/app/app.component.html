@@ -1,4 +1,4 @@
 <div class="d-flex">
-  <app-pokemon-list class="flex-50"></app-pokemon-list>
+  <app-pokemon-list (selectPokemon)="pokemonSelected($event)" class="flex-50"></app-pokemon-list>
   <app-pokemon-detail class="flex-50"></app-pokemon-detail>
 </div>

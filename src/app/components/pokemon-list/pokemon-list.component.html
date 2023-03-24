@@ -1,6 +1,6 @@
 
 <ul>
-  <li *ngFor="let pokemon of pokemons?.results; let i = index">
+  <li (click)="pokeSelected(pokemon.url)" *ngFor="let pokemon of pokemons?.results; let i = index">
     {{ pokemon.name }}
   </li>
 </ul>
