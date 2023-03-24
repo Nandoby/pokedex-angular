@@ -1,0 +1,9 @@
+
+<ul>
+  <li *ngFor="let pokemon of pokemons?.results; let i = index">
+    {{ pokemon.name }}
+  </li>
+</ul>
+
+<button  (click)="prev()" type="button">Previous</button>
+<button  (click)="next()" type="button">Next</button>
